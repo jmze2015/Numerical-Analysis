@@ -1,0 +1,73 @@
+%% implication commands
+\newcommand{\R}{\Rightarrow}
+\newcommand{\LL}{\Leftarrow}
+
+%% polynomial commands
+\newcommand{\polyr}{\mathcal{P}(\mathbb{R})}
+\newcommand{\polyn}[1]{\mathcal{P}_{#1}(\mathbb{R})}
+\newcommand{\polync}[1]{\mathcal{P}_{#1}(\mathbb{C})}
+
+
+%% probability commands
+\newcommand{\EXP}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\Var}[1]{\text{Var}\left(#1 \right)}
+\newcommand{\Bnm}[2]{\text{Binom}\left(#1,#2\right)}
+\newcommand{\indy}[1]{\bm{1}_{\{#1\}}}
+%% Misc.
+
+\newcommand{\tnl}[1]{\label{eq:#1}\tag{#1}}
+
+
+%% Number set commands
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\Span}[1]{\text{Span} \left\{#1 \right\}}
+
+%% Vector commands
+\newcommand{\V}[1]{\Vec{#1}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\proj}[2]{\text{proj}_{\V{#2}}(\V{#1})}
+\newcommand{\inp}[2]{ \langle \V{#1} , \V{#2} \rangle }
+
+
+%% Matrix commands
+\newcommand{\trans}[1]{{#1}^\mathsf{T}}
+\newcommand{\trace}[1]{\text{tr}(#1)}
+\newcommand{\zmatgen}{\mathbf{0}_{m\times n}}
+\newcommand{\zmat}{\mathbf{0}}
+\newcommand{\rref}[1]{\text{rref}(#1)}
+\newcommand{\dete}[1]{\text{det}#1}
+\newcommand{\Det}[1]{\text{det}#1}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\Dim}[1]{\text{dim}\left(#1\right)}
+\newcommand{\Col}[1]{\text{Col}\left(#1\right)}
+\newcommand{\Row}[1]{\text{Row}\left(#1\right)}
+\newcommand{\Rank}[1]{\text{Rank}\left(#1\right)}
+\newcommand{\Null}[1]{\text{Null}\left(#1\right)}
+\newcommand{\ms}[1]{M_{#1}(\RR)}
+\newcommand{\Char}[1]{\text{char}(#1)}
+
+%% Function commands
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\Ker}[1]{\text{Ker}\left(#1\right)}
+\newcommand{\Nullt}[1]{\text{Nullity}\left(#1\right)}
+
+
+%% Text commands
+\newcommand{\rt}[1]{\textcolor{red}{#1}}
+\newcommand{\bt}[1]{\textcolor{blue}{#1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\Jup}{\ttt{Jupyter}\textsuperscript{\ttt{TM}}}
+
+
+%% Right angle tikz definition
+\def\MarkRightAngle[size=#1](#2,#3,#4){
+  \draw[black,thick] ($(#3)!#1!(#2)$) -- ($($(#3)!#1!(#2)$)!#1!90:(#2)$) -- ($(#3)!#1!(#4)$)
+}
+
+
