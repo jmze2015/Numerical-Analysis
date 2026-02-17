@@ -1,0 +1,16 @@
+# RStudio / R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Output files
+output/
+*.log
+*.aux
+*.out
+*.toc
+
+# OS junk
+.DS_Store
+Thumbs.db
