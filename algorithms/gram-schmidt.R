@@ -44,7 +44,7 @@ out
 
 
 ## Test matrix #2
-B <- matrix(c(3,0,1,-2,1,0), ncol = 2)
+B <- matrix(c(3,0,-1,-2,1,0), ncol = 2)
 out <- gSchmidt(B)
 out
 
