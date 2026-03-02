@@ -89,7 +89,7 @@ eigen(test_matrix)$val
 
 
 ## why does it fail here??
-# test_matrix_3 <- matrix(c(3,4,1,2), nrow =2)
+# test_matrix_3 <- matrix(c(3,4,10,2), nrow =2)
 # QR_algorithm(test_matrix_3)
 
 
