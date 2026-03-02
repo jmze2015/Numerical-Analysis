@@ -1,8 +1,10 @@
 ## Jacobi Method Algorithm ##
 
-jacobi_algorithm <- function(A, b, x_init, tol = 1e-6, max_steps = 100){
+gauss_seidel <- function(A, b, x_init, tol = 1e-6, max_steps = 100){
   ## A must be square otherwise D^{-1} is impossible.
   if (ncol(A) == nrow(A)){
+    ## same as Jacobi method algorithm 
+    
     n <- ncol(A)
     ## diagonal matrix
     D <- diag(diag(A))
@@ -16,11 +18,11 @@ jacobi_algorithm <- function(A, b, x_init, tol = 1e-6, max_steps = 100){
     diag(U) <- 0
     
     ## iteration
-    invD <- solve(D)
+    invLD <- solve(L + D)
     x0 <- x_init
     xseq <- matrix(x0, nrow = 2)
     for (i in 1: max_steps){
-      x_new <- -1 * (invD %*% (L + U) %*% x0) + invD %*% b
+      x_new <- (-1 * (invLD %*% U) %*% x0) + invLD %*% b
       xseq <- cbind(xseq, x_new)
       
       if (norm(x_new - x0, type = "2") < tol){ break}
@@ -45,15 +47,4 @@ b <- matrix(c(1,2), nrow = 2)
 x0 <- matrix(c(1,1), nrow = 2)
 
 ## Calling Jacobi Algorithm
-jacobi_algorithm(A, b, x0, tol = 1e-10)
-
-
-
-
-
-
-
-
-
-
-
+gauss_seidel(A, b, x0, tol = 1e-10)
