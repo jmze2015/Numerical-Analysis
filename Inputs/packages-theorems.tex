@@ -1,0 +1,167 @@
+\usepackage[left=0.5in,right=1.2in]{geometry} % margin adjustments
+\usepackage{graphicx} % to use includegraphics
+\usepackage{setspace} % not sure if I need this
+\usepackage[inline]{enumitem} % fancy enumerating
+\usepackage{float} % fixing figure positions 
+\usepackage[dvipsnames]{xcolor} % color text & more
+\usepackage[most]{tcolorbox} %colorful boxes
+\usepackage{hyperref} % for the hyperreferences
+\usepackage[nameinlink]{cleveref} %references
+\usepackage{amsmath, amsthm, amssymb, amsfonts} % math tools
+\usepackage{pgfplots} %math plots
+\usepackage{subcaption} %for subfigures
+\usepackage{titlesec} %used to define units
+\usepackage{lipsum} % for dummy text in latin 
+\usepackage{marginnote} % to write margin notes
+%%\usepackage{thmtools} % for custom theorem environments
+\usepackage[utf8]{inputenc} % Allows for certain characters
+\usepackage{environ} % for new environments??
+\usepackage{fancyhdr} % adds the chapter to all pages?
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{pdfpages}
+\usetikzlibrary{calc}
+\usetikzlibrary{angles, quotes}  % for angle marks and labels
+
+
+
+
+%\usepackage{showframe} % shows text frames
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%% Color deinitions
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeblue}{rgb}{0,0,0.9}
+\definecolor{codered}{rgb}{0.9,0,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%% Python Style (for listing package)
+\lstdefinestyle{Pythonstyle}{
+    language=Python,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegreen},  %% change to bb blue?
+    stringstyle=\color{codered},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    morekeywords={figure, quiver, xlim, ylim, legend, grid, show},
+    literate=*{0}{{{\color{codegreen}0}}}{1}
+              {1}{{{\color{codegreen}1}}}{1}
+              {2}{{{\color{codegreen}2}}}{1}
+              {3}{{{\color{codegreen}3}}}{1}
+              {4}{{{\color{codegreen}4}}}{1}
+              {5}{{{\color{codegreen}5}}}{1}
+              {6}{{{\color{codegreen}6}}}{1}
+              {7}{{{\color{codegreen}7}}}{1}
+              {8}{{{\color{codegreen}8}}}{1}
+              {9}{{{\color{codegreen}9}}}{1}
+}
+
+
+% --- Theorem-like environments (shared counter) ---
+
+\newtcbtheorem[number within=section]{mytheorem}{Theorem}%
+{enhanced,
+  colback=blue!6,
+  colframe=blue!35!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={colback=blue!18, colframe=blue!35!black},
+  attach boxed title to top left={xshift=2mm,yshift=-2mm},
+  breakable,
+  arc=2mm,
+  left=2mm,right=2mm,top=1mm,bottom=1mm,
+  label type=mytheorem
+}{thm}
+
+\newtcbtheorem[use counter from=mytheorem]{mylemma}{Lemma}%
+{enhanced,
+  colback=purple!6,
+  colframe=purple!35!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={colback=purple!18, colframe=purple!35!black},
+  attach boxed title to top left={xshift=2mm,yshift=-2mm},
+  breakable,
+  arc=2mm,
+  left=2mm,right=2mm,top=1mm,bottom=1mm,
+  label type=mylemma
+}{lem}
+
+\newtcbtheorem[use counter from=mytheorem]{mycorollary}{Corollary}%
+{enhanced,
+  colback=orange!6,
+  colframe=orange!35!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={colback=orange!18, colframe=orange!35!black},
+  attach boxed title to top left={xshift=2mm,yshift=-2mm},
+  breakable,
+  arc=2mm,
+  left=2mm,right=2mm,top=1mm,bottom=1mm,
+  label type=mycorollary
+}{cor}
+
+\newtcbtheorem[use counter from=mytheorem]{myexample}{Example}%
+{enhanced,
+  colback=red!6,
+  colframe=red!35!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={colback=red!18, colframe=red!35!black},
+  attach boxed title to top left={xshift=2mm,yshift=-2mm},
+  breakable,
+  arc=2mm,
+  left=2mm,right=2mm,top=1mm,bottom=1mm,
+  label type=myexample
+}{ex}
+
+\newtcbtheorem[use counter from=mytheorem]{mydefinition}{Definition}%
+{enhanced,
+  colback=green!6,
+  colframe=green!35!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={colback=green!18, colframe=green!35!black},
+  attach boxed title to top left={xshift=2mm,yshift=-2mm},
+  breakable,
+  arc=2mm,
+  left=2mm,right=2mm,top=1mm,bottom=1mm,
+  label type=mydefinition
+}{def}
+
+% --- cleveref names: use the label types above (NOT tcb@cnt@...) ---
+
+\crefname{mytheorem}{theorem}{theorems}
+\Crefname{mytheorem}{Theorem}{Theorems}
+
+\crefname{mylemma}{lemma}{lemmas}
+\Crefname{mylemma}{Lemma}{Lemmas}
+
+\crefname{mycorollary}{corollary}{corollaries}
+\Crefname{mycorollary}{Corollary}{Corollaries}
+
+\crefname{myexample}{example}{examples}
+\Crefname{myexample}{Example}{Examples}
+
+\crefname{mydefinition}{definition}{definitions}
+\Crefname{mydefinition}{Definition}{Definitions}
