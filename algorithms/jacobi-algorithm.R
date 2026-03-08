@@ -18,7 +18,7 @@ jacobi_algorithm <- function(A, b, x_init, tol = 1e-6, max_steps = 100){
     ## iteration
     invD <- solve(D)
     x0 <- x_init
-    xseq <- matrix(x0, nrow = 2)
+    xseq <- matrix(x0, nrow = n)
     for (i in 1: max_steps){
       x_new <- -1 * (invD %*% (L + U) %*% x0) + invD %*% b
       xseq <- cbind(xseq, x_new)
@@ -46,6 +46,15 @@ x0 <- matrix(c(1,1), nrow = 2)
 
 ## Calling Jacobi Algorithm
 jacobi_algorithm(A, b, x0, tol = 1e-10)
+
+
+
+
+
+
+
+
+
 
 
 
