@@ -21,7 +21,7 @@ jobs:
       - name: Pull from Overleaf
         run: |
           git remote add overleaf https://git:${{ secrets.OVERLEAF_TOKEN }}@git.overleaf.com/695c329fe08f973cfce0dd3e
-          git pull overleaf master --allow-unrelated-histories
+          git pull overleaf master --no-rebase --allow-unrelated-histories
 
       - name: Push to GitHub
         run: |
