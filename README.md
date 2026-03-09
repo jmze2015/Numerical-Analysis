@@ -1,6 +1,6 @@
 # Numerical Analysis Notes
 
-These notes are automatically compiled from the Overleaf project.
+Notes are automatically compiled from an Overleaf project. Last serious update on notes was around **02/08/2026**.
 
 📄 **Latest PDF:**  
 [Open Notes](LaTeX/notes.pdf)
@@ -11,4 +11,4 @@ This repository contains:
 
 - Numerical analysis notes
 - Algorithms and implementations
-- Supporting write-ups
+- Homework write-ups
