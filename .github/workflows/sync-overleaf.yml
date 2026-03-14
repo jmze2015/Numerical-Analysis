@@ -3,7 +3,6 @@ name: Sync Overleaf
 on:
   schedule:
     - cron: "0 5 * * *"   # runs once a day at 9:00PM PST
-    
   workflow_dispatch:
 
 jobs:
