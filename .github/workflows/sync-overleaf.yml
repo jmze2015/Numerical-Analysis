@@ -2,7 +2,7 @@ name: Sync Overleaf
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # runs once a day at 9:00PM PST
+    - cron: "0 5 * * *"   # once per day (9pm PST)
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,8 @@ jobs:
       - name: Pull from Overleaf
         run: |
           git remote add overleaf https://git:${{ secrets.OVERLEAF_TOKEN }}@git.overleaf.com/695c329fe08f973cfce0dd3e
-          git pull overleaf master --no-rebase --allow-unrelated-histories
+          git fetch overleaf
+          git merge overleaf/master -X theirs --allow-unrelated-histories
 
       - name: Push to GitHub
         run: |
