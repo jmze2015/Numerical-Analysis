@@ -66,11 +66,6 @@ simpson_int <- function(f, a, b, N){
   return(sum)
 }
 
-
-
-
-
-
 ## Adding a Comparison of the Methods
 
 Y1 <- c()
@@ -80,7 +75,6 @@ for (i in (3:40)){
   Y1 <- c(Y1, trap_int(cos, 0, pi/2, i))
   Y2 <- c(Y2, simpson_int(cos, 0, pi/2, i))
 }
-
 
 plot(c(x,x),c(Y1,Y2), col = c(rep("red",38),rep("blue", 38)), type = "b",
      pch = 19, xlab = 'Number of subintervals', ylab = "Area under the curve",
