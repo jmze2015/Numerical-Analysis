@@ -33,6 +33,7 @@ euler_method <- function(h, t0, y0){
   
 }
 
+## outputs for homework
 euler_method(0.25,0,-1)
 euler_method(2/15,0,-1)
 euler_method(1/100,0,-1)
