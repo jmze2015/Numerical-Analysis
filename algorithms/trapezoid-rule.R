@@ -86,3 +86,4 @@ legend("bottomright", legend = c("Trapezoid Rule", "Simpson's Rule"), col = c("r
 
 
 
+
